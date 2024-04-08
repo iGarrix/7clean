@@ -127,6 +127,14 @@ export const Header: React.FC<IHeaderProps> = ({ ...props }) => {
 						transition={{ duration: 0.15, ease: 'linear' }}
 						className='xs:flex lg:hidden fixed top-0 left-0 w-full h-full bg-light/80 backdrop-blur z-[499] mt-[5rem] px-[1rem] flex flex-col overflow-hidden'>
 						<ul className='text-dark-full flex flex-col gap-8 select-none'>
+							<GreenButton
+								type={'button'}
+								className=''
+								onClick={() => {
+									ask.onOpen(true)
+								}}>
+								Ask about cleaning
+							</GreenButton>
 							{navbar_data.map((item, key) => (
 								<LinkScroll
 									key={key}
@@ -141,7 +149,7 @@ export const Header: React.FC<IHeaderProps> = ({ ...props }) => {
 												setOpen(false)
 											}, 200)
 										}}>
-										<p>{item.title}</p>
+										<p>{item.title}s</p>
 										<ExternalLink />
 									</li>
 								</LinkScroll>

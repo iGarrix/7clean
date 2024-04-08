@@ -54,16 +54,7 @@ export const AskModal: React.FC<IAskModalProps> = ({ ...props }) => {
 		<Dialog open={data.isOpen} onOpenChange={data.onOpen}>
 			<DialogContent className='bg-light'>
 				<DialogHeader>
-					<DialogTitle>
-						Email us{' '}
-						<Link
-							href={'#faq'}
-							onClick={() => {
-								data.onOpen(false)
-							}}>
-							fggfg
-						</Link>
-					</DialogTitle>
+					<DialogTitle>Email us </DialogTitle>
 				</DialogHeader>
 				<Formik
 					initialValues={askState}
