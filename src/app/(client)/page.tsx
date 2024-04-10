@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import AboutUsBlock from './aboutus'
 import CalculatorBlock from './calc'
 import FaqBlock from './faq'
@@ -8,12 +9,14 @@ import WelcomeBlock from './welcome'
 export default function ClientPage() {
 	return (
 		<main className='flex flex-col pb-[6vh] gap-[10vh]'>
-			<WelcomeBlock />
-			<AboutUsBlock />
-			<CalculatorBlock />
-			<ServicesBlock />
-			<FeedbackBlock />
-			<FaqBlock />
+			<Suspense fallback={''}>
+				<WelcomeBlock />
+				<AboutUsBlock />
+				<CalculatorBlock />
+				<ServicesBlock />
+				<FeedbackBlock />
+				<FaqBlock />
+			</Suspense>
 		</main>
 	)
 }
