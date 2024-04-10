@@ -10,7 +10,6 @@ import {
 } from '@/components/ui/select'
 import { Switch } from '@/components/ui/switch'
 import { useState } from 'react'
-import { number } from 'yup'
 
 export default function CalculatorBlock() {
 	const [dropdowns, setDropdowns] = useState({
