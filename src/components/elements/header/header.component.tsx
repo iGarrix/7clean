@@ -57,7 +57,7 @@ export const Header: React.FC<IHeaderProps> = ({ ...props }) => {
 						<span className='text-accent-foreign'>Clean</span>
 					</h1>
 					<div className='flex grow justify-center xs:hidden lg:flex'>
-						<ul className='flex gap-[2.5rem] select-none'>
+						<menu className='flex gap-[2.5rem] select-none'>
 							{navbar_data.map((item, key) => (
 								<LinkScroll
 									key={key}
@@ -70,7 +70,7 @@ export const Header: React.FC<IHeaderProps> = ({ ...props }) => {
 									</li>
 								</LinkScroll>
 							))}
-						</ul>
+						</menu>
 					</div>
 				</aside>
 				<aside className='flex gap-[2rem] items-center xs:hidden lg:flex'>
@@ -126,7 +126,7 @@ export const Header: React.FC<IHeaderProps> = ({ ...props }) => {
 						exit={{ opacity: 0, transition: { opacity: { delay: 0.1 } } }}
 						transition={{ duration: 0.15, ease: 'linear' }}
 						className='xs:flex lg:hidden fixed top-0 left-0 w-full h-full bg-light/80 backdrop-blur z-[499] mt-[5rem] px-[1rem] flex flex-col overflow-hidden'>
-						<ul className='text-dark-full flex flex-col gap-8 select-none'>
+						<menu className='text-dark-full flex flex-col gap-8 select-none'>
 							<GreenButton
 								type={'button'}
 								className=''
@@ -154,7 +154,7 @@ export const Header: React.FC<IHeaderProps> = ({ ...props }) => {
 									</li>
 								</LinkScroll>
 							))}
-						</ul>
+						</menu>
 					</m.div>
 				)}
 			</AnimatePresence>

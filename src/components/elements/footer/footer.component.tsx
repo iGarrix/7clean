@@ -9,11 +9,17 @@ import Image from 'next/image'
 import { GreenButton } from '@/components/commons/buttons/GreenButton/greenbutton.component'
 import { SquareArrowOutUpRight } from 'lucide-react'
 import { useAskModal } from '@/services/askModalStore/ask.store'
+import { useEffect, useState } from 'react'
 //import style from './scss.style.module.scss';
 
 export interface IFooterProps {}
 
 export const Footer: React.FC<IFooterProps> = ({ ...props }) => {
+	const [year, setYear] = useState(new Date().getFullYear())
+	useEffect(() => {
+		// Update the year when the component mounts
+		setYear(new Date().getFullYear())
+	}, [])
 	const data = useAskModal()
 	return (
 		<footer className='flex flex-col bg-dark-full text-white px-[15rem] py-[3rem] gap-6 xs:px-[1rem] sm:px-[5rem] lg:px-[2rem] xl:px-[5rem] 2xl:px-[10rem] 3xl:px-[15rem]'>
@@ -23,7 +29,7 @@ export const Footer: React.FC<IFooterProps> = ({ ...props }) => {
 						<span className=''>7</span>
 						<span className='text-accent-foreign'>Clean</span>
 					</h1>
-					<ul className='text-slate-400 flex gap-8 xs:hidden lg:flex'>
+					<menu className='text-slate-400 flex gap-8 xs:hidden lg:flex'>
 						{navbar_data.map((item, key) => (
 							<LinkScroll
 								key={key}
@@ -36,7 +42,7 @@ export const Footer: React.FC<IFooterProps> = ({ ...props }) => {
 								</li>
 							</LinkScroll>
 						))}
-					</ul>
+					</menu>
 				</section>
 				<section className='flex gap-[2rem] items-center xs:flex-col'>
 					<div className='flex flex-col items-end gap-2'>
@@ -74,7 +80,7 @@ export const Footer: React.FC<IFooterProps> = ({ ...props }) => {
 					</GreenButton>
 				</section>
 			</aside>
-			<ul className='text-slate-400 flex items-center gap-4 flex-col xs:flex sm:flex-row sm:justify-center lg:hidden'>
+			<menu className='text-slate-400 flex items-center gap-4 flex-col xs:flex sm:flex-row sm:justify-center lg:hidden'>
 				{navbar_data.map((item, key) => (
 					<LinkScroll key={key} spy duration={200} to={item.path} offset={-96}>
 						<li className='transition-all hover:text-accent-foreign cursor-pointer'>
@@ -82,9 +88,9 @@ export const Footer: React.FC<IFooterProps> = ({ ...props }) => {
 						</li>
 					</LinkScroll>
 				))}
-			</ul>
+			</menu>
 			<section className='flex text-neutral-400 items-center gap-16 xs:flex-col-reverse xs:gap-2 lg:flex-row lg:gap-16'>
-				<p>© 2022 - {new Date().getFullYear()} All rights reserved</p>
+				<p>{`© 2022 - ${year}. All Rights Reserved.`}</p>
 				<Link
 					href={'https://webcraft.rivne.ua/'}
 					target='_blank'

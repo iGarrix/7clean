@@ -82,8 +82,8 @@ export default function FaqBlock() {
 						<AccordionTrigger className='data-[state=open]:text-accent-primary hover:no-underline font-bold'>
 							Where are we cleaning?
 						</AccordionTrigger>
-						<AccordionContent className='text-slate-500'>
-							<h4 className='text-dark-less text-lg'>Seattle - Washington</h4>
+						<AccordionContent className='text-dark-less text-lg'>
+							Seattle - Washington
 						</AccordionContent>
 					</AccordionItem>
 					<AccordionItem value='4' className='border rounded px-[1rem]'>
@@ -91,8 +91,8 @@ export default function FaqBlock() {
 							Where could we see prices?
 						</AccordionTrigger>
 						<AccordionContent className='text-slate-500'>
-							<p className='text-dark-less'>
-								You could{' '}
+							<div className='text-dark-less'>
+								<span>You could</span>{' '}
 								<LinkScroll
 									to='cost'
 									spy
@@ -101,8 +101,8 @@ export default function FaqBlock() {
 									className='text-blue-500 cursor-pointer'>
 									calculate
 								</LinkScroll>{' '}
-								more or less price individually for you
-							</p>
+								<span>more or less price individually for you</span>
+							</div>
 						</AccordionContent>
 					</AccordionItem>
 				</Accordion>

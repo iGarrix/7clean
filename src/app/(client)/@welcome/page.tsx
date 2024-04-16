@@ -4,6 +4,7 @@ import { GreenButton } from '@/components/commons/buttons/GreenButton/greenbutto
 import Image from 'next/image'
 import Cleaner from '@/assets/images/cleaner.png'
 import { Link as LinkScroll } from 'react-scroll'
+import { cn } from '@/lib/utils'
 export default function WelcomeBlock() {
 	return (
 		<section className='min-h-[calc(100svh-10rem)] xs:min-h-[calc(90svh)] sm:min-h-[calc(100svh-10rem)] px-[15rem] grid grid-cols-2 xs:grid-cols-1 xl:grid-cols-2 gap-10 xs:px-[1rem] sm:px-[5rem] lg:px-[2rem] xl:px-[5rem] 2xl:px-[10rem] 3xl:px-[15rem]'>
@@ -17,20 +18,24 @@ export default function WelcomeBlock() {
 						</span>
 					</h1>
 				</div>
-				<p className='font-normal text-[17px] xs:text-center xl:text-start'>
-					<span>Clean up flats, houses, commercial rooms, offices.</span>
+				<div className='font-normal text-[17px] xs:text-center xl:text-start'>
+					<p>Clean up flats, houses, commercial rooms, offices.</p>
 					<br />
-					<span>
+					<p>
 						All kind of maintaining clarity after feasts, repairs and bit
 						pollution
-					</span>
-				</p>
-				<LinkScroll to='cost' spy duration={200} offset={-96}>
-					<GreenButton
-						type={'button'}
-						className='px-16 py-3 text-lg rounded-3xl rounded-tr-none'>
-						Get a qoute
-					</GreenButton>
+					</p>
+				</div>
+				<LinkScroll
+					to='cost'
+					spy
+					duration={200}
+					offset={-96}
+					className={cn(
+						'text-light bg-gradient-to-br from-accent-primary via-accent-primary to-accent-foreign px-[1rem] rounded-lg py-[0.5rem] transition-all hover:shadow-xl hover:shadow-accent-foreign/30',
+						'px-16 py-3 text-lg rounded-3xl rounded-tr-none cursor-pointer'
+					)}>
+					Get a qoute
 				</LinkScroll>
 			</div>
 			<div className='flex justify-end xs:hidden xl:flex'>
